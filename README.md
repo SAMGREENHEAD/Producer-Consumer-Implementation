@@ -39,7 +39,8 @@ The `ITstudent` class represents a student with attributes like name, student ID
 
 cd path/to/project/directory
 python -m venv env
-
+.\env\Scripts\activate
+python main.py
 5. Observe the console output to see how the producers generate data and write it to XML files, while the consumer reads and processes the data concurrently.
 
 ## Testing
@@ -61,10 +62,4 @@ This program is licensed under the MIT License - see the file for details.
 ## Acknowledgments
 
 - This program is based on the classic producer-consumer problem in concurrent programming.
-- Special thanks to the contributors for their efforts and ideas.
-
-
-
--.\env\Scripts\activate
-
-- python main.py
+.

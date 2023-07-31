@@ -9,5 +9,5 @@ buffer = Queue(MAX_BUFFER_SIZE)
 
 # Create semaphores for synchronization
 buffer_full = Semaphore(0)
-buffer_empty = Semaphore(MAX_BUFFER_SIZE)
-mutex = Semaphore(1)
+buffer_empty = buffer_empty = Semaphore(MAX_BUFFER_SIZE - buffer.qsize()) 
+

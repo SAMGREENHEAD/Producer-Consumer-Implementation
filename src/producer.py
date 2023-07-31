@@ -3,6 +3,10 @@ import random
 import xml.etree.ElementTree as ET
 from buffer import buffer, buffer_full, buffer_empty, mutex
 from student import ITstudent
+import time
+
+END_OF_FILES = -1
+
 
 # Generate random student information
 def generate_random_student():
@@ -35,8 +39,7 @@ def student_to_xml(student):
         mark_element.text = str(course['mark'])
     return ET.tostring(root, encoding='unicode')
 
-# Producer function
-def producer(producer_id):
+def producer(producer_id,event):
     for i in range(1, 11):
         student = generate_random_student()
         xml_data = student_to_xml(student)
@@ -56,6 +59,14 @@ def producer(producer_id):
 
         mutex.release()  # Release exclusive access to the buffer
         buffer_full.release()  # Increment the full slots in the buffer
+        print(f"Producer {producer_id} released buffer_full semaphore")
+
+
+    time.sleep(2)    
+    buffer.put(END_OF_FILES)
+    print(f"Producer {producer_id} finished producing.")
+    # Set the event to signal the consumer to finish
+    event.set()
 
 # Create and start the producer processes
 if __name__ == '__main__':

@@ -6,12 +6,14 @@ class ITstudent:
         self.courses = courses
 
     def calculate_average(self):
-        if len(self.courses) > 0:
-            total_mark = sum(course['mark'] for course in self.courses)
-            return total_mark / len(self.courses)
+        # Method to calculate the average mark of the student
+        if len(self.courses) > 0:  # Check if the student has taken any courses
+            total_mark = sum(course['mark'] for course in self.courses)  # Calculate the total marks
+            return total_mark / len(self.courses)  # Return the average mark
         else:
-            return 0
+            return 0  # If no courses, return 0 as the average
 
     def passed(self):
-        average = self.calculate_average()
-        return average >= 50
+        # Method to check if the student has passed based on the average mark
+        average = self.calculate_average()  # Get the student's average mark
+        return average >= 50  # Return True if average is greater than or equal to 50, otherwise False
