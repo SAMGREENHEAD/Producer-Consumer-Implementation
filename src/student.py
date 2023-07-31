@@ -1,7 +1,5 @@
 class ITstudent:
     def __init__(self, name, student_id, program, courses):
-        # Constructor (Initializer) method for the ITstudent class
-        # Initializes the attributes of the class with the provided values
         self.name = name
         self.student_id = student_id
         self.program = program

@@ -6,6 +6,7 @@ from buffer import buffer, buffer_full, buffer_empty, mutex
 import sys
 sys.stdout.reconfigure(line_buffering=True)
 
+
 # Create and start the producer processes
 # Create and start the producer processes
 def start_producers(num_producers):
@@ -25,10 +26,8 @@ def start_consumer():
     return consumer_thread
 
 if __name__ == '__main__':
-    num_producers = 2  # Adjust the number of producers as needed
-
+    num_producers = 2  # Adjust the number of producers as ne
     event = mp.Event()
-
     # Start the producer processes
     producer_processes = []
     for i in range(num_producers):
@@ -43,9 +42,6 @@ if __name__ == '__main__':
     # Wait for all producer processes to finish
     for producer_process in producer_processes:
         producer_process.join()
-
     # Set the event to signal the consumer to finish
     event.set()
 
-    # Wait for the consumer thread to finish
-    consumer_thread.join()

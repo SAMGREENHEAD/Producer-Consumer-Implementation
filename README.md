@@ -51,5 +51,3 @@ This program is licensed under the MIT License - see the file for details.
 
 - This program is based on the classic producer-consumer problem in concurrent programming.
 - Special thanks to the contributors for their efforts and ideas.
-
-

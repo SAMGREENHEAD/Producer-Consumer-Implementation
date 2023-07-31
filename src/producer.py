@@ -7,6 +7,7 @@ import time
 
 END_OF_FILES = -1
 
+
 # Generate random student information
 def generate_random_student():
     name = "Student " + str(random.randint(1, 100))
@@ -38,8 +39,6 @@ def student_to_xml(student):
         mark_element.text = str(course['mark'])
     return ET.tostring(root, encoding='unicode')
 
-
-# Producer function
 def producer(producer_id,event):
     for i in range(1, 11):
         student = generate_random_student()
