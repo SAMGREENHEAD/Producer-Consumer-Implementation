@@ -63,7 +63,8 @@ def producer(producer_id,event):
         print(f"Producer {producer_id} released buffer_full semaphore")
 
 
-    time.sleep(2)    
+    time.sleep(2) 
+       
     buffer.put(END_OF_FILES)
     print(f"Producer {producer_id} finished producing.")
     # Set the event to signal the consumer to finish

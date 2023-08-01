@@ -7,7 +7,6 @@ import sys
 sys.stdout.reconfigure(line_buffering=True)
 
 # Create and start the producer processes
-# Create and start the producer processes
 def start_producers(num_producers):
     producer_processes = []
     for i in range(num_producers):
