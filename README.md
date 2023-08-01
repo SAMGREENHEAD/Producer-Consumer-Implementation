@@ -1,7 +1,4 @@
 
-## Setting Up the Environment**:
-The program starts by importing necessary libraries, such as `multiprocessing`, `threading`, and `xml.etree.ElementTree`. The shared buffer and semaphores for synchronization are defined. The `ITstudent` class is created with methods to calculate the average mark and check if a student has passed. Functions are defined to generate random student data and convert student objects to XML strings.
-
 ## Producer-Consumer-Implementation# Producer-Consumer System with XML File Processing
 This Python program processes student data and stores it in XML files using the producer-consumer design pattern. The system employs numerous producers to create random student data and write it to XML files, while a single consumer reads and processes the data from these files.
 
@@ -14,6 +11,9 @@ Here we make use of the the semaphores empty, full and mutex to solve the proble
 ## Full: initially set to 0 as the buffer is empty at the beginning. This semaphore is used to keep track of the number of available spaces in a buffer for the producer to fill.
 
 ## Mutex:this is used to control the access to the buffer such that only one process between the producer and consumer has access to the buffer. This has been initialized to 1. 
+
+## Setting Up the Environment**:
+The program starts by importing necessary libraries, such as `multiprocessing`, `threading`, and `xml.etree.ElementTree`. The shared buffer and semaphores for synchronization are defined. The `ITstudent` class is created with methods to calculate the average mark and check if a student has passed. Functions are defined to generate random student data and convert student objects to XML strings.
 
 The program's components are as follows:
 
@@ -46,11 +46,10 @@ The `ITstudent` class represents a student with attributes like name, student ID
 
 cd path/to/project/directory
 python -m venv env
+-.\env\Scripts\activate
+- python main.py
 
 5. Observe the console output to see how the producers generate data and write it to XML files, while the consumer reads and processes the data concurrently.
-
-## Testing
-A testing script, `test_producer_consumer.py`, is included in the repository to perform various tests on the producer-consumer system. The test script ensures that the system behaves correctly under different scenarios and configurations. To run the tests, execute `test_producer_consumer.py` and check the output for successful test results.
 
 ## Issues Detected and Debugging Attempts:
 1. The initial issue was that the consumer thread was not consuming data from the buffer. This could have been due to synchronization problems between the producer and consumer.
@@ -68,7 +67,7 @@ This problem was solved using python programming language and coded on VScode. P
 We welcome contributions to improve this program. If you find any issues or have suggestions for enhancements, feel free to open an issue or submit a pull request.
 
 ## Future implementation
-In the future we would like to incorporate security features. 
+In the future we would like to incorporate security features and resolve. 
 
 ## License
 
@@ -78,6 +77,3 @@ This program is licensed under the MIT License - see the file for details.
 
 - This program is based on the classic producer-consumer problem in concurrent programming.
 - Special thanks to the contributors for their efforts and ideas.
--.\env\Scripts\activate
-
-- python main.py
